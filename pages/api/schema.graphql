@@ -1,0 +1,50 @@
+enum GENDER {
+  Male
+  Female
+}
+
+input StudentInput {
+  first_name: String
+  last_name: String
+  gender: GENDER
+  date_of_birth: String
+  email: String
+  country: String
+  enrollment_date: String
+  phone_number: String
+  zip_code: String
+}
+
+type Student {
+  student_id: String!
+  first_name: String
+  last_name: String
+  gender: GENDER
+  date_of_birth: String
+  email: String
+  country: String
+  enrollment_date: String
+  phone_number: String
+  zip_code: String
+}
+
+type GetStudentResponse {
+  totalCount: Int
+  students: [Student]
+}
+
+type StudentResponse {
+  success: Boolean!
+  message: String
+}
+
+type Query {
+  getStudents: GetStudentResponse
+  getStudentById(student_id: String!): Student
+}
+
+type Mutation {
+  addStudent(input: StudentInput): StudentResponse
+  updateStudentByEmail(email: String!, input: StudentInput): StudentResponse
+  deleteStudentByEmail(email: String!): StudentResponse
+}
