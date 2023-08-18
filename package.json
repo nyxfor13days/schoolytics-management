@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@apollo/server": "^4.9.1",
@@ -32,6 +33,11 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/uuid": "^9.0.2"
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-resolvers": "^4.0.1",
+    "@types/uuid": "^9.0.2",
+    "@graphql-codegen/typescript-document-nodes": "4.0.1",
+    "@graphql-codegen/introspection": "4.0.0"
   }
 }
