@@ -1,6 +1,6 @@
-import { users } from "..";
+import { users } from "../graphql";
 
-export async function getUser(token) {
+export async function getUser(token: any) {
   users
     .findOne({ token: token })
     .then(() => {
